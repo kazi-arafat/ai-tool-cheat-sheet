@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Tools CheatSheet</title>
+    <!-- Materialize CSS CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f4f4f4;
+            --text-color: #333;
+            --table-bg: #fff;
+            --table-border: #ddd;
+            --header-bg: #e0e0e0;
+            --link-color: #0277bd;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #1a1a1a;
+            --text-color: #e0e0e0;
+            --table-bg: #2e2e2e;
+            --table-border: #444;
+            --header-bg: #333;
+            --link-color: #4fc3f7;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: all 0.3s ease;
+        }
+
+        .logo-img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .flag-img {
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
+        }
+
+        .collapsible-header {
+            font-weight: bold;
+            background-color: var(--header-bg);
+        }
+
+        .table-container {
+            overflow-x: auto;
+        }
+
+        .header-title {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 2.5rem;
+            font-weight: 600;
+        }
+
+        table {
+            background-color: var(--table-bg);
+            border: 1px solid var(--table-border);
+        }
+
+        th,
+        td {
+            border: 1px solid var(--table-border);
+        }
+
+        a {
+            color: var(--link-color);
+        }
+
+        footer {
+            margin-top: 40px;
+            padding: 20px 0;
+            text-align: center;
+            background-color: var(--header-bg);
+            font-size: 1.2rem;
+        }
+
+        .search-container {
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        #search-input {
+            max-width: 300px;
+        }
+
+        #theme-toggle {
+            cursor: pointer;
+        }
+
+        @media only screen and (max-width: 992px) {
+            .header-title {
+                font-size: 2rem;
+            }
+
+            .logo-img {
+                width: 30px;
+                height: 30px;
+            }
+
+            .flag-img {
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        @media (prefers-color-scheme: dark) {
+            body:not([data-theme="light"]) {
+                --bg-color: #1a1a1a;
+                --text-color: #e0e0e0;
+                --table-bg: #2e2e2e;
+                --table-border: #444;
+                --header-bg: #333;
+                --link-color: #4fc3f7;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h4 class="header-title">🧠 AI Tools CheatSheet</h4>
+        <div class="search-container">
+            <input type="text" id="search-input" class="input-field" placeholder="Search by category or tool name...">
+            <i id="theme-toggle" class="material-icons" title="Toggle Dark/Light Mode">brightness_6</i>
+        </div>
+        <ul class="collapsible popout">
+            <li data-category="Productivity">
+                <div class="collapsible-header"><i class="material-icons">apps</i>📊 Productivity</div>
+                <div class="collapsible-body table-container">
+                    <table class="striped responsive-table">
+                        <thead>
+                            <tr>
+                                <th>🖼️ Logo</th>
+                                <th>🛠️ Tool Name</th>
+                                <th>🎯 Best Fit For</th>
+                                <th>💸 Free Usage</th>
+                                <th>✅ Pros</th>
+                                <th>⚠️ Cons</th>
+                                <th>🌍 Origin</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr data-tool="Napkin AI">
+                                <td><img class="logo-img" src="https://www.napkin.ai/favicon.ico"
+                                        onerror="this.src='local_logos/napkin_ai.png'" alt="Napkin AI"></td>
+                                <td><a href="https://www.napkin.ai" target="_blank">Napkin AI</a></td>
+                                <td>Visualizing ideas quickly</td>
+                                <td>Yes</td>
+                                <td>Converts text to visuals fast</td>
+                                <td>Limited templates/styles</td>
+                                <td><img class="flag-img" src="https://flagcdn.com/24x24/us.svg" alt="USA Flag"
+                                        title="USA"></td>
+                            </tr>
+                            <tr data-tool="Gamma">
+                                <td><img class="logo-img" src="https://gamma.app/favicon.ico"
+                                        onerror="this.src='local_logos/gamma.png'" alt="Gamma"></td>
+                                <td><a href="https://gamma.app" target="_blank">Gamma</a></td>
+                                <td>Fast doc or pitch deck creation</td>
+                                <td>Yes</td>
+                                <td>Creates slides from prompts</td>
+                                <td>Limited free generation</td>
+                                <td><img class="flag-img" src="https://flagcdn.com/24x24/us.svg" alt="USA Flag"
+                                        title="USA"></td>
+                            </tr>
+                            <tr data-tool="Jasper AI">
+                                <td><img class="logo-img" src="https://www.jasper.ai/favicon.ico"
+                                        onerror="this.src='local_logos/jasper_ai.png'" alt="Jasper AI"></td>
+                                <td><a href="https://www.jasper.ai" target="_blank">Jasper AI</a></td>
+                                <td>Marketing copy, blogs, and social posts</td>
+                                <td>Yes (7-day trial)</td>
+                                <td>Templates for ad copy, blogs, branding</td>
+                                <td>Paid plans required for real use</td>
+                                <td><img class="flag-img" src="https://flagcdn.com/24x24/us.svg" alt="USA Flag"
+                                        title="USA"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </li>
+            <li data-category="Image">
+                <div class="collapsible-header"><i class="material-icons">image</i>🖼️ Image</div>
+                <div class="collapsible-body table-container">
+                    <table class="striped responsive-table">
+                        <thead>
+                            <tr>
+                                <th>🖼️ Logo</th>
+                                <th>🛠️ Tool Name</th>
+                                <th>🎯 Best Fit For</th>
+                                <th>💸 Free Usage</th>
+                                <th>✅ Pros</th>
+                                <th>⚠️ Cons</th>
+                                <th>🌍 Origin</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr data-tool="DALL·E 3">
+                                <td><img class="logo-img" src="https://chat.openai.com/favicon.ico"
+                                        onerror="this.src='local_logos/dalle3.png'" alt="DALL·E 3"></td>
+                                <td><a href="https://chat.openai.com" target="_blank">DALL·E 3</a></td>
+                                <td>Concept art, illustrations</td>
+                                <td>Yes</td>
+                                <td>Great prompt understanding</td>
+                                <td>Face generation restricted</td>
+                                <td><img class="flag-img" src="https://flagcdn.com/24x24/us.svg" alt="USA Flag"
+                                        title="USA"></td>
+                            </tr>
+                            <tr data-tool="Leonardo AI">
+                                <td><img class="logo-img" src="https://leonardo.ai/favicon.ico"
+                                        onerror="this.src='local_logos/leonardo_ai.png'" alt="Leonardo AI"></td>
+                                <td><a href="https://leonardo.ai" target="_blank">Leonardo AI</a></td>
+                                <td>Game art, fantasy, illustrations</td>
+                                <td>Yes</td>
+                                <td>Multiple models & styles</td>
+                                <td>Steep UI for beginners</td>
+                                <td><img class="flag-img" src="https://flagcdn.com/24x24/au.svg" alt="Australia Flag"
+                                        title="Australia"></td>
+                            </tr>
+                            <tr data-tool="Midjourney">
+                                <td><img class="logo-img" src="https://www.midjourney.com/favicon.ico"
+                                        onerror="this.src='local_logos/midjourney.png'" alt="Midjourney"></td>
+                                <td><a href="https://www.midjourney.com" target="_blank">Midjourney</a></td>
+                                <td>Premium concept art & product mockups</td>
+                                <td>No</td>
+                                <td>Top-tier visual quality</td>
+                                <td>Discord-only access</td>
+                                <td><img class="flag-img" src="https://flagcdn.com/24x24/us.svg" alt="USA Flag"
+                                        title="USA"></td>
+                            </tr>
+                            <tr data-tool="Adobe Firefly">
+                                <td><img class="logo-img" src="https://www.adobe.com/favicon.ico"
+                                        onerror="this.src='local_logos/adobe_firefly.png'" alt="Adobe Firefly"></td>
+                                <td><a href="https://www.adobe.com/products/firefly.html" target="_blank">Adobe
+                                        Firefly</a></td>
+                                <td>Designers inside Adobe apps</td>
+                                <td>Yes</td>
+                                <td>Integrated into Photoshop</td>
+                                <td>Basic image generation</td>
+                                <td><img class="flag-img" src="https://flagcdn.com/24x24/us.svg" alt="USA Flag"
+                                        title="USA"></td>
+                            </tr>
+                            <tr data-tool="DreamStudio">
+                                <td><img class="logo-img" src="https://beta.dreamstudio.ai/favicon.ico"
+                                        onerror="this.src='local_logos/dreamstudio.png'" alt="DreamStudio"></td>
+                                <td><a href="https://beta.dreamstudio.ai/generate" target="_blank">DreamStudio</a></td>
+                                <td>Open-source image creation</td>
+                                <td>Yes</td>
+                                <td>Deep customization, open source</td>
+                                <td>Needs prompt expertise</td>
+                                <td><img class="flag-img" src="https://flagcdn.com/24x24/gb.svg"
+                                        alt="United Kingdom Flag" title="United Kingdom"></td>
+                            </tr>
+                            <tr data-tool="Pixlr">
+                                <td><img class="logo-img" src="https://pixlr.com/favicon.ico"
+                                        onerror="this.src='local_logos/pixlr.png'" alt="Pixlr"></td>
+                                <td><a href="https://pixlr.com" target="_blank">Pixlr</a></td>
+                                <td>Quick graphic/photo editing using AI</td>
+                                <td>Yes</td>
+                                <td>Easy to use with AI tools like BG remover</td>
+                                <td>Ads on free plan, lower resolution</td>
+                                <td><img class="flag-img" src="https://flagcdn.com/24x24/se.svg" alt="Sweden Flag"
+                                        title="Sweden"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </li>
+            <li data-category="Video">
+                <div class="collapsible-header"><i class="material-icons">videocam</i>🎥 Video</div>
+                <div class="collapsible-body table-container">
+                    <table class="striped responsive-table">
+                        <thead>
+                            <tr>
+                                <th>🖼️ Logo</th>
+                                <th>🛠️ Tool Name</th>
+                                <th>🎯 Best Fit For</th>
+                                <th>💸 Free Usage</th>
+                                <th>✅ Pros</th>
+                                <th>⚠️ Cons</th>
+                                <th>🌍 Origin</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr data-tool="Sora AI">
+                                <td><img class="logo-img" src="https://openai.com/favicon.ico"
+                                        onerror="this.src='local_logos/sora_ai.png'" alt="Sora AI"></td>
+                                <td><a href="https://openai.com/sora" target="_blank">Sora AI</a></td>
+                                <td>Studio-quality AI video R&D</td>
+                                <td>No</td>
+                                <td>Complex cinematic output</td>
+                                <td>Private access only</td>
+                                <td><img class="flag-img" src="https://flagcdn.com/24x24/us.svg" alt="USA Flag"
+                                        title="USA"></td>
+                            </tr>
+                            <tr data-tool="Hailuo AI">
+                                <td><img class="logo-img" src="https://hailuoai.video/favicon.ico"
+                                        onerror="this.src='local_logos/hailuo_ai.png'" alt="Hailuo AI"></td>
+                                <td><a href="https://hailuoai.video" target="_blank">Hailuo AI</a></td>
+                                <td>Fun AI videos for social</td>
+                                <td>Yes</td>
+                                <td>Fast gen, generous credits</td>
+                                <td>Artifacts, very short clips</td>
+                                <td><img class="flag-img" src="https://flagcdn.com/24x24/cn.svg" alt="China Flag"
+                                        title="China"></td>
+                            </tr>
+                            <tr data-tool="Runway ML">
+                                <td><img class="logo-img" src="https://runwayml.com/favicon.ico"
+                                        onerror="this.src='local_logos/runway_ml.png'" alt="Runway ML"></td>
+                                <td><a href="https://runwayml.com" target="_blank">Runway ML</a></td>
+                                <td>Abstract video edits & storyboards</td>
+                                <td>Yes</td>
+                                <td>All-in-one editor & Gen-2</td>
+                                <td>Lower visual quality</td>
+                                <td><img class="flag-img" src="https://flagcdn.com/24x24/us.svg" alt="USA Flag"
+                                        title="USA"></td>
+                            </tr>
+                            <tr data-tool="Kling">
+                                <td><img class="logo-img" src="https://www.klingai.com/favicon.ico"
+                                        onerror="this.src='local_logos/kling.png'" alt="Kling"></td>
+                                <td><a href="https://www.klingai.com" target="_blank">Kling</a></td>
+                                <td>Controlled character videos</td>
+                                <td>Yes</td>
+                                <td>Lip-sync, motion control</td>
+                                <td>Style bias, slow generation</td>
+                                <td><img class="flag-img" src="https://flagcdn.com/24x24/cn.svg" alt="China Flag"
+                                        title="China"></td>
+                            </tr>
+                            <tr data-tool="Pika Labs">
+                                <td><img class="logo-img" src="https://pika.art/favicon.ico"
+                                        onerror="this.src='local_logos/pika_labs.png'" alt="Pika Labs"></td>
+                                <td><a href="https://pika.art" target="_blank">Pika Labs</a></td>
+                                <td>Creative effects for social content</td>
+                                <td>Yes</td>
+                                <td>Viral effects, very easy UI</td>
+                                <td>Low-res, short only</td>
+                                <td><img class="flag-img" src="https://flagcdn.com/24x24/us.svg" alt="USA Flag"
+                                        title="USA"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </li>
+            <li data-category="Audio">
+                <div class="collapsible-header"><i class="material-icons">audiotrack</i>🎵 Audio</div>
+                <div class="collapsible-body table-container">
+                    <table class="striped responsive-table">
+                        <thead>
+                            <tr>
+                                <th>🖼️ Logo</th>
+                                <th>🛠️ Tool Name</th>
+                                <th>🎯 Best Fit For</th>
+                                <th>💸 Free Usage</th>
+                                <th>✅ Pros</th>
+                                <th>⚠️ Cons</th>
+                                <th>🌍 Origin</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr data-tool="Suno AI">
+                                <td><img class="logo-img" src="https://suno.ai/favicon.ico"
+                                        onerror="this.src='local_logos/suno_ai.png'" alt="Suno AI"></td>
+                                <td><a href="https://suno.ai" target="_blank">Suno AI</a></td>
+                                <td>Song drafts, parody songs</td>
+                                <td>Yes</td>
+                                <td>Text-to-song with vocals</td>
+                                <td>Same-sounding voice effect</td>
+                                <td><img class="flag-img" src="https://flagcdn.com/24x24/us.svg" alt="USA Flag"
+                                        title="USA"></td>
+                            </tr>
+                            <tr data-tool="Eleven Labs">
+                                <td><img class="logo-img" src="https://elevenlabs.io/favicon.ico"
+                                        onerror="this.src='local_logos/eleven_labs.png'" alt="Eleven Labs"></td>
+                                <td><a href="https://elevenlabs.io" target="_blank">Eleven Labs</a></td>
+                                <td>Narration, dubbing, audiobooks</td>
+                                <td>Yes</td>
+                                <td>Best-in-class voice cloning</td>
+                                <td>Paid for long usage</td>
+                                <td><img class="flag-img" src="https://flagcdn.com/24x24/us.svg" alt="USA Flag"
+                                        title="USA"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </li>
+            <li data-category="Coding">
+                <div class="collapsible-header"><i class="material-icons">code</i>💻 Coding</div>
+                <div class="collapsible-body table-container">
+                    <table class="striped responsive-table">
+                        <thead>
+                            <tr>
+                                <th>🖼️ Logo</th>
+                                <th>🛠️ Tool Name</th>
+                                <th>🎯 Best Fit For</th>
+                                <th>💸 Free Usage</th>
+                                <th>✅ Pros</th>
+                                <th>⚠️ Cons</th>
+                                <th>🌍 Origin</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr data-tool="Cursor AI">
+                                <td><img class="logo-img" src="https://cursor.so/favicon.ico"
+                                        onerror="this.src='local_logos/cursor_ai.png'" alt="Cursor AI"></td>
+                                <td><a href="https://cursor.so" target="_blank">Cursor AI</a></td>
+                                <td>AI-assisted programming in a dedicated IDE</td>
+                                <td>Yes</td>
+                                <td>Full project context, VS Code-like</td>
+                                <td>Not plugin-rich like VS Code</td>
+                                <td><img class="flag-img" src="https://flagcdn.com/24x24/us.svg" alt="USA Flag"
+                                        title="USA"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </li>
+            <li data-category="Website">
+                <div class="collapsible-header"><i class="material-icons">web</i>🌐 Website</div>
+                <div class="collapsible-body table-container">
+                    <table class="striped responsive-table">
+                        <thead>
+                            <tr>
+                                <th>🖼️ Logo</th>
+                                <th>🛠️ Tool Name</th>
+                                <th>🎯 Best Fit For</th>
+                                <th>💸 Free Usage</th>
+                                <th>✅ Pros</th>
+                                <th>⚠️ Cons</th>
+                                <th>🌍 Origin</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr data-tool="Framer">
+                                <td><img class="logo-img" src="https://framer.com/favicon.ico"
+                                        onerror="this.src='local_logos/framer.png'" alt="Framer"></td>
+                                <td><a href="https://framer.com" target="_blank">Framer</a></td>
+                                <td>Landing pages, portfolios</td>
+                                <td>Yes</td>
+                                <td>One-prompt site generation</td>
+                                <td>Not for backend, some learning curve</td>
+                                <td><img class="flag-img" src="https://flagcdn.com/24x24/nl.svg" alt="Netherlands Flag"
+                                        title="Netherlands"></td>
+                            </tr>
+                            <tr data-tool="10Web AI">
+                                <td><img class="logo-img" src="https://10web.io/favicon.ico"
+                                        onerror="this.src='local_logos/10web.png'" alt="10Web AI"></td>
+                                <td><a href="https://10web.io" target="_blank">10Web AI</a></td>
+                                <td>Small business & blog sites fast</td>
+                                <td>Yes</td>
+                                <td>AI-powered WordPress setup</td>
+                                <td>Limited to WP/Elementor templates</td>
+                                <td><img class="flag-img" src="https://flagcdn.com/24x24/am.svg" alt="Armenia Flag"
+                                        title="Armenia"></td>
+                            </tr>
+                            <tr data-tool="ChatGPT (Web dev)">
+                                <td><img class="logo-img" src="https://chat.openai.com/favicon.ico"
+                                        onerror="this.src='local_logos/chatgpt.png'" alt="ChatGPT (Web dev)"></td>
+                                <td><a href="https://chat.openai.com" target="_blank">ChatGPT (Web dev)</a></td>
+                                <td>Rapid site prototypes, dev help</td>
+                                <td>Yes</td>
+                                <td>Can generate full HTML/CSS/JS</td>
+                                <td>Needs user to run/deploy code</td>
+                                <td><img class="flag-img" src="https://flagcdn.com/24x24/us.svg" alt="USA Flag"
+                                        title="USA"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </li>
+            <li data-category="AI Chatbots">
+                <div class="collapsible-header"><i class="material-icons">chat</i>🤖 AI Chatbots</div>
+                <div class="collapsible-body table-container">
+                    <table class="striped responsive-table">
+                        <thead>
+                            <tr>
+                                <th>🖼️ Logo</th>
+                                <th>🛠️ Tool Name</th>
+                                <th>🎯 Best Fit For</th>
+                                <th>💸 Free Usage</th>
+                                <th>✅ Pros</th>
+                                <th>⚠️ Cons</th>
+                                <th>🌍 Origin</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr data-tool="ChatGPT">
+                                <td><img class="logo-img" src="https://chat.openai.com/favicon.ico"
+                                        onerror="this.src='local_logos/chatgpt.png'" alt="ChatGPT"></td>
+                                <td><a href="https://chat.openai.com" target="_blank">ChatGPT</a></td>
+                                <td>General purpose assistance</td>
+                                <td>Yes</td>
+                                <td>Natural interaction, GPT-4 in Plus</td>
+                                <td>GPT-4 only in paid version</td>
+                                <td><img class="flag-img" src="https://flagcdn.com/24x24/us.svg" alt="USA Flag"
+                                        title="USA"></td>
+                            </tr>
+                            <tr data-tool="Grok (X AI)">
+                                <td><img class="logo-img" src="https://x.ai/favicon.ico"
+                                        onerror="this.src='local_logos/grok.png'" alt="Grok (X AI)"></td>
+                                <td><a href="https://x.ai" target="_blank">Grok (X AI)</a></td>
+                                <td>Social-aware chatbot & quick search AI</td>
+                                <td>No</td>
+                                <td>Real-time info from X (Twitter)</td>
+                                <td>Exclusive to X users & limited rollout</td>
+                                <td><img class="flag-img" src="https://flagcdn.com/24x24/us.svg" alt="USA Flag"
+                                        title="USA"></td>
+                            </tr>
+                            <tr data-tool="Gemini (ex-Bard)">
+                                <td><img class="logo-img" src="https://gemini.google.com/favicon.ico"
+                                        onerror="this.src='local_logos/gemini.png'" alt="Gemini (ex-Bard)"></td>
+                                <td><a href="https://gemini.google.com" target="_blank">Gemini (ex-Bard)</a></td>
+                                <td>Research assistant & Google-integrated answers</td>
+                                <td>Yes</td>
+                                <td>Integrated with Google services</td>
+                                <td>UI less robust than ChatGPT</td>
+                                <td><img class="flag-img" src="https://flagcdn.com/24x24/us.svg" alt="USA Flag"
+                                        title="USA"></td>
+                            </tr>
+                            <tr data-tool="Mistral Chat">
+                                <td><img class="logo-img" src="https://chat.mistral.ai/favicon.ico"
+                                        onerror="this.src='local_logos/mistral_chat.png'" alt="Mistral Chat"></td>
+                                <td><a href="https://chat.mistral.ai" target="_blank">Mistral Chat</a></td>
+                                <td>Open-source experiments and dev integration</td>
+                                <td>Yes</td>
+                                <td>Lightweight, open-source LLM</td>
+                                <td>Limited features vs ChatGPT</td>
+                                <td><img class="flag-img" src="https://flagcdn.com/24x24/fr.svg" alt="France Flag"
+                                        title="France"></td>
+                            </tr>
+                            <tr data-tool="Meta AI">
+                                <td><img class="logo-img" src="https://meta.ai/favicon.ico"
+                                        onerror="this.src='local_logos/meta_ai.png'" alt="Meta AI"></td>
+                                <td><a href="https://meta.ai" target="_blank">Meta AI</a></td>
+                                <td>Quick AI replies inside social apps</td>
+                                <td>Yes</td>
+                                <td>Real-time suggestions in chats</td>
+                                <td>Limited to Meta platforms</td>
+                                <td><img class="flag-img" src="https://flagcdn.com/24x24/us.svg" alt="USA Flag"
+                                        title="USA"></td>
+                            </tr>
+                            <tr data-tool="DeepSeek Chat">
+                                <td><img class="logo-img" src="https://chat.deepseek.com/favicon.ico"
+                                        onerror="this.src='local_logos/deepseek_chat.png'" alt="DeepSeek Chat"></td>
+                                <td><a href="https://chat.deepseek.com" target="_blank">DeepSeek Chat</a></td>
+                                <td>Dev-focused assistant with Chinese + English support</td>
+                                <td>Yes</td>
+                                <td>Open-weight LLM with strong coding</td>
+                                <td>UI is basic, newer ecosystem</td>
+                                <td><img class="flag-img" src="https://flagcdn.com/24x24/cn.svg" alt="China Flag"
+                                        title="China"></td>
+                            </tr>
+                            <tr data-tool="Perplexity AI">
+                                <td><img class="logo-img" src="https://www.perplexity.ai/favicon.ico"
+                                        onerror="this.src='local_logos/perplexity_ai.png'" alt="Perplexity AI"></td>
+                                <td><a href="https://www.perplexity.ai" target="_blank">Perplexity AI</a></td>
+                                <td>Real-time factual chatbot with citations</td>
+                                <td>Yes</td>
+                                <td>Cites sources, accurate search-like interface</td>
+                                <td>Not conversationally deep like GPT</td>
+                                <td><img class="flag-img" src="https://flagcdn.com/24x24/us.svg" alt="USA Flag"
+                                        title="USA"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <footer>
+        Made with ❤️ by Kazi Arafat | Copyright @2025
+    </footer>
+
+    <!-- Materialize JS CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Initialize Materialize collapsible
+            var elems = document.querySelectorAll('.collapsible');
+            M.Collapsible.init(elems);
+
+            // Search functionality
+            const searchInput = document.getElementById('search-input');
+            const collapsibleItems = document.querySelectorAll('.collapsible > li');
+            const tables = document.querySelectorAll('table tbody');
+
+            searchInput.addEventListener('input', function () {
+                const query = this.value.trim().toLowerCase();
+
+                collapsibleItems.forEach(item => {
+                    const category = item.getAttribute('data-category').toLowerCase();
+                    const rows = item.querySelectorAll('tbody tr');
+                    let hasVisibleRows = false;
+
+                    rows.forEach(row => {
+                        const toolName = row.getAttribute('data-tool').toLowerCase();
+                        const matches = query === '' || category.includes(query) || toolName.includes(query);
+                        row.style.display = matches ? '' : 'none';
+                        if (matches) hasVisibleRows = true;
+                    });
+
+                    item.style.display = query === '' || hasVisibleRows || category.includes(query) ? '' : 'none';
+                });
+            });
+
+            // Dark mode toggle
+            const themeToggle = document.getElementById('theme-toggle');
+            const body = document.body;
+            const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            body.setAttribute('data-theme', savedTheme);
+            updateToggleIcon(savedTheme);
+
+            themeToggle.addEventListener('click', function () {
+                const currentTheme = body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+                body.setAttribute('data-theme', currentTheme);
+                localStorage.setItem('theme', currentTheme);
+                updateToggleIcon(currentTheme);
+            });
+
+            function updateToggleIcon(theme) {
+                themeToggle.textContent = theme === 'dark' ? 'brightness_7' : 'brightness_4';
+            }
+        });
+    </script>
+</body>
+
+</html>
